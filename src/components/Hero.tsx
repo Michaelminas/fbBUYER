@@ -54,7 +54,7 @@ export default function Hero() {
           <div className="order-1 lg:order-2">
             <div className="bg-card rounded-brand-lg shadow-lg p-6 md:p-8 border border-border">
               <h2 className="text-card-title font-headline text-heading mb-6 text-center">
-                Get Your Instant Quote
+                Get Your Quote
               </h2>
               <QuoteForm />
             </div>
