@@ -10,7 +10,7 @@ interface IPhoneModel {
   family: string;
   type: string;
   isActivationLockTier: boolean;
-  basePrice: any;
+  storageOptions: string[];
 }
 
 interface FormData {
@@ -194,7 +194,7 @@ export default function QuoteCalculator() {
                 }}
               >
                 <option value="">Select storage size</option>
-                {Object.keys(selectedModel.basePrice).map(storage => (
+                {selectedModel.storageOptions.map(storage => (
                   <option key={storage} value={storage}>
                     {storage}GB
                   </option>
