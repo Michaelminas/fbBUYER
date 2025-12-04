@@ -215,7 +215,7 @@ export default function QuoteCalculator() {
               )}
             </label>
 
-            <div className="space-y-3 max-h-64 overflow-y-auto border border-gray-200 rounded-lg p-3">
+            <div className="space-y-3 border border-gray-200 rounded-lg p-3">
               {/* Screen & Face ID Group */}
               <div>
                 <h4 className="text-sm font-medium text-gray-600 mb-1">Screen & Face ID</h4>
