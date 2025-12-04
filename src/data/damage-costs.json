@@ -1,0 +1,16 @@
+{
+  "Screen (scratches/cracks)": 80,
+  "Touch issues": 100,
+  "Face ID/TrueDepth": 150,
+  "Back glass": 60,
+  "Rear camera": 120,
+  "Front camera": 80,
+  "Microphones/Speakers": 50,
+  "Buttons": 40,
+  "Charging/Port": 70,
+  "Battery condition": 80,
+  "Water/Liquid exposure": 200,
+  "Activation/IC-locked": 0,
+  "Won't power on": 250,
+  "Motherboard/logic board issue": 300
+}

@@ -1,0 +1,281 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  firstName     String?
+  lastName      String?
+  phoneNumber   String?
+  address       String?
+  sellMethod    String   // 'pickup' | 'dropoff'
+  pickupFee     Float?
+  distance      Float?
+  isVerified    Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  verification Verification?
+  quote        Quote?
+  appointment  Appointment?
+
+  @@map("lead")
+}
+
+model Verification {
+  id        String   @id @default(cuid())
+  leadId    String   @unique
+  token     String   @unique
+  isUsed    Boolean  @default(false)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@map("verification")
+}
+
+model Device {
+  id       String @id @default(cuid())
+  model    String
+  storage  String
+  family   String
+  type     String
+
+  quotes Quote[]
+
+  @@unique([model, storage])
+  @@map("device")
+}
+
+model Quote {
+  id                String   @id @default(cuid())
+  leadId            String   @unique
+  deviceId          String
+  damages           String // JSON string of damage types array
+  hasBox            Boolean  @default(true)
+  hasCharger        Boolean  @default(true)
+  isActivationLocked Boolean @default(false)
+  basePrice         Float
+  damageDeduction   Float
+  margin            Float
+  finalQuote        Float
+  pickupFee         Float?
+  isExpired         Boolean  @default(false)
+  expiresAt         DateTime
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  lead   Lead   @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  device Device @relation(fields: [deviceId], references: [id])
+
+  @@map("quote")
+}
+
+model Address {
+  id            String  @id @default(cuid())
+  street        String
+  suburb        String
+  postcode      String
+  state         String  @default("NSW")
+  latitude      Float?
+  longitude     Float?
+  formattedAddress String?
+
+  appointments Appointment[]
+
+  @@map("address")
+}
+
+model ScheduleSlot {
+  id          String   @id @default(cuid())
+  date        DateTime
+  startTime   DateTime
+  endTime     DateTime
+  isAvailable Boolean  @default(true)
+  isBlocked   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  appointments Appointment[]
+
+  @@unique([date, startTime])
+  @@map("schedule_slot")
+}
+
+model Appointment {
+  id          String   @id @default(cuid())
+  leadId      String   @unique
+  slotId      String
+  addressId   String?
+  status      String   @default("scheduled") // 'scheduled' | 'confirmed' | 'completed' | 'cancelled'
+  notes       String?
+  isSameDay   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  lead    Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  slot    ScheduleSlot  @relation(fields: [slotId], references: [id])
+  address Address?      @relation(fields: [addressId], references: [id])
+
+  stateLogs StateLog[]
+  media     Media[]
+
+  @@map("appointment")
+}
+
+model StateLog {
+  id            String   @id @default(cuid())
+  appointmentId String
+  fromState     String?
+  toState       String
+  reason        String?
+  adminUserId   String?
+  createdAt     DateTime @default(now())
+
+  appointment Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  adminUser   AdminUser?  @relation(fields: [adminUserId], references: [id])
+
+  @@map("state_log")
+}
+
+model Media {
+  id            String   @id @default(cuid())
+  appointmentId String
+  type          String   // 'image' | 'video' | 'document'
+  fileName      String
+  fileUrl       String
+  mimeType      String?
+  fileSize      Int?
+  uploadedAt    DateTime @default(now())
+
+  appointment Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+
+  @@map("media")
+}
+
+model AdminUser {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  firstName         String
+  lastName          String
+  passwordHash      String
+  role              String   @default("admin") // 'admin' | 'manager'
+  isActive          Boolean  @default(true)
+  lastLoginAt       DateTime?
+  passwordResetToken String?
+  passwordResetExpiry DateTime?
+  failedLoginAttempts Int     @default(0)
+  lockedUntil       DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  stateLogs     StateLog[]
+  loginActivity LoginActivity[]
+
+  @@map("admin_user")
+}
+
+model Blacklist {
+  id          String   @id @default(cuid())
+  email       String?  @unique
+  phoneNumber String?  @unique
+  reason      String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("blacklist")
+}
+
+model AnalyticsEvent {
+  id              String   @id @default(cuid())
+  event           String
+  category        String?  // 'quote' | 'lead' | 'verification' | 'scheduling' | 'navigation' | 'form'
+  action          String?  // 'started' | 'completed' | 'abandoned' | 'clicked' | 'viewed'
+  label           String?
+  value           Float?
+  properties      String?  // JSON string for additional data
+  userId          String?
+  sessionId       String?
+  leadId          String?
+  userAgent       String?
+  ipAddress       String?
+  referrer        String?
+  pageUrl         String?
+  deviceType      String?  // 'mobile' | 'tablet' | 'desktop'
+  browserName     String?
+  screenWidth     Int?
+  screenHeight    Int?
+  timestamp       DateTime @default(now())
+
+  @@index([event])
+  @@index([category])
+  @@index([leadId])
+  @@index([sessionId])
+  @@index([timestamp])
+  @@map("analytics_event")
+}
+
+model PriceCatalog {
+  id        String   @id @default(cuid())
+  model     String
+  storage   String
+  basePrice Float
+  isActive  Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+
+  @@unique([model, storage])
+  @@map("price_catalog")
+}
+
+model RepairCatalog {
+  id          String  @id @default(cuid())
+  damageType  String  @unique
+  cost        Float
+  description String?
+  isActive    Boolean @default(true)
+
+  @@map("repair_catalog")
+}
+
+
+model LoginActivity {
+  id          String   @id @default(cuid())
+  adminUserId String
+  ipAddress   String
+  userAgent   String?
+  loginType   String   // 'success' | 'failed' | 'logout' | 'password_reset'
+  failureReason String?
+  sessionId   String?
+  timestamp   DateTime @default(now())
+
+  adminUser AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
+
+  @@map("login_activity")
+}
+
+model NotificationLog {
+  id          String   @id @default(cuid())
+  type        String   // 'email' | 'sms' | 'push'
+  recipient   String
+  subject     String?
+  content     String
+  status      String   // 'sent' | 'delivered' | 'failed' | 'pending'
+  provider    String?  // 'resend' | 'twilio' | etc
+  externalId  String?
+  errorMessage String?
+  metadata    String?  // JSON string for additional data
+  sentAt      DateTime @default(now())
+
+  @@map("notification_log")
+}
+

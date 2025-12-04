@@ -1,0 +1,297 @@
+[
+  {
+    "id": "iphone-16-pro-max",
+    "name": "iPhone 16 Pro Max",
+    "family": "iPhone 16",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 1300,
+      "256": 1300,
+      "512": 1350,
+      "1024": 1400
+    }
+  },
+  {
+    "id": "iphone-16-pro",
+    "name": "iPhone 16 Pro",
+    "family": "iPhone 16",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 1200,
+      "256": 1200,
+      "512": 1250,
+      "1024": 1300
+    }
+  },
+  {
+    "id": "iphone-16-plus",
+    "name": "iPhone 16 Plus",
+    "family": "iPhone 16",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 1050,
+      "256": 1050,
+      "512": 1100
+    }
+  },
+  {
+    "id": "iphone-16",
+    "name": "iPhone 16",
+    "family": "iPhone 16",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 950,
+      "256": 1000,
+      "512": 1050
+    }
+  },
+  {
+    "id": "iphone-15-pro-max",
+    "name": "iPhone 15 Pro Max",
+    "family": "iPhone 15",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 1150,
+      "256": 1150,
+      "512": 1200,
+      "1024": 1250
+    }
+  },
+  {
+    "id": "iphone-15-pro",
+    "name": "iPhone 15 Pro",
+    "family": "iPhone 15",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 1050,
+      "256": 1050,
+      "512": 1100,
+      "1024": 1150
+    }
+  },
+  {
+    "id": "iphone-15-plus",
+    "name": "iPhone 15 Plus",
+    "family": "iPhone 15",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 900,
+      "256": 950,
+      "512": 1000
+    }
+  },
+  {
+    "id": "iphone-15",
+    "name": "iPhone 15",
+    "family": "iPhone 15",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 850,
+      "256": 850,
+      "512": 900
+    }
+  },
+  {
+    "id": "iphone-14-pro-max",
+    "name": "iPhone 14 Pro Max",
+    "family": "iPhone 14",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 850,
+      "256": 850,
+      "512": 900,
+      "1024": 950
+    }
+  },
+  {
+    "id": "iphone-14-pro",
+    "name": "iPhone 14 Pro",
+    "family": "iPhone 14",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 750,
+      "256": 800,
+      "512": 850,
+      "1024": 900
+    }
+  },
+  {
+    "id": "iphone-14-plus",
+    "name": "iPhone 14 Plus",
+    "family": "iPhone 14",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 650,
+      "256": 700,
+      "512": 750
+    }
+  },
+  {
+    "id": "iphone-14",
+    "name": "iPhone 14",
+    "family": "iPhone 14",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 600,
+      "256": 650,
+      "512": 700
+    }
+  },
+  {
+    "id": "iphone-13-pro-max",
+    "name": "iPhone 13 Pro Max",
+    "family": "iPhone 13",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 600,
+      "256": 650,
+      "512": 700,
+      "1024": 700
+    }
+  },
+  {
+    "id": "iphone-13-pro",
+    "name": "iPhone 13 Pro",
+    "family": "iPhone 13",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 550,
+      "256": 600,
+      "512": 650,
+      "1024": 700
+    }
+  },
+  {
+    "id": "iphone-13-mini",
+    "name": "iPhone 13 Mini",
+    "family": "iPhone 13",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 400,
+      "256": 450,
+      "512": 500
+    }
+  },
+  {
+    "id": "iphone-13",
+    "name": "iPhone 13",
+    "family": "iPhone 13",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 450,
+      "256": 500,
+      "512": 550
+    }
+  },
+  {
+    "id": "iphone-12-pro-max",
+    "name": "iPhone 12 Pro Max",
+    "family": "iPhone 12",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 450,
+      "256": 500,
+      "512": 550
+    }
+  },
+  {
+    "id": "iphone-12-pro",
+    "name": "iPhone 12 Pro",
+    "family": "iPhone 12",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 400,
+      "256": 450,
+      "512": 500
+    }
+  },
+  {
+    "id": "iphone-12-mini",
+    "name": "iPhone 12 Mini",
+    "family": "iPhone 12",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 300,
+      "256": 350,
+      "512": 350
+    }
+  },
+  {
+    "id": "iphone-12",
+    "name": "iPhone 12",
+    "family": "iPhone 12",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 350,
+      "256": 350,
+      "512": 400
+    }
+  },
+  {
+    "id": "iphone-11-pro-max",
+    "name": "iPhone 11 Pro Max",
+    "family": "iPhone 11",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 300,
+      "256": 350,
+      "512": 400
+    }
+  },
+  {
+    "id": "iphone-11-pro",
+    "name": "iPhone 11 Pro",
+    "family": "iPhone 11",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "128": 250,
+      "256": 300,
+      "512": 350
+    }
+  },
+  {
+    "id": "iphone-11",
+    "name": "iPhone 11",
+    "family": "iPhone 11",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "64": 200,
+      "128": 250,
+      "256": 250
+    }
+  },
+  {
+    "id": "iphone-x",
+    "name": "iPhone X",
+    "family": "iPhone X",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 150,
+      "256": 200
+    }
+  }
+]

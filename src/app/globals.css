@@ -1,90 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+:root {
+  /* Design System Colors */
+  --primary: #2563EB;
+  --success: #10B981;
+  --info: #4F46E5;
+  --surface: #F8FAFC;
+  --card: #FFFFFF;
+  --text-heading: #0F172A;
+  --text-body: #334155;
+  --border: #E2E8F0;
+  --danger: #DC2626;
+  
+  --background: var(--surface);
+  --foreground: var(--text-body);
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-text-heading: var(--text-heading);
+  --color-text-body: var(--text-body);
+  --color-border: var(--border);
+  --color-danger: var(--danger);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Tabular numbers for prices */
-.tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-
-/* High contrast mode */
 .high-contrast {
-  --tw-bg-opacity: 1;
-  --tw-text-opacity: 1;
+  --primary: #0000FF;
+  --success: #006600;
+  --text-heading: #000000;
+  --text-body: #000000;
+  --background: #FFFFFF;
+  --border: #000000;
 }
 
-.high-contrast .bg-surface {
-  background-color: #000000;
-}
-
-.high-contrast .text-body {
-  color: #ffffff;
-}
-
-.high-contrast .text-heading {
-  color: #ffffff;
-}
-
-.high-contrast .bg-card {
-  background-color: #1a1a1a;
-  border: 2px solid #ffffff;
-}
-
-.high-contrast .border-border {
-  border-color: #ffffff;
-}
-
-/* Focus styles for accessibility */
-.focus-ring:focus {
-  outline: 2px solid #2563EB;
-  outline-offset: 2px;
-}
-
-/* Button loading state */
-.btn-loading {
-  position: relative;
-  color: transparent;
-}
-
-.btn-loading::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  left: 50%;
-  margin-left: -8px;
-  margin-top: -8px;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  border-top-color: transparent;
-  animation: button-loading-spinner 1s ease infinite;
-}
-
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-
-  to {
-    transform: rotate(1turn);
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.5;
 }
