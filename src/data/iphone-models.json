@@ -1,5 +1,53 @@
 [
   {
+    "id": "iphone-17-pro-max",
+    "name": "iPhone 17 Pro Max",
+    "family": "iPhone 17",
+    "type": "Pro Max",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "256": 1450,
+      "512": 1500,
+      "1024": 1550
+    }
+  },
+  {
+    "id": "iphone-17-pro",
+    "name": "iPhone 17 Pro",
+    "family": "iPhone 17",
+    "type": "Pro",
+    "isActivationLockTier": true,
+    "basePrice": {
+      "256": 1350,
+      "512": 1400,
+      "1024": 1450
+    }
+  },
+  {
+    "id": "iphone-17-plus",
+    "name": "iPhone 17 Plus",
+    "family": "iPhone 17",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 1150,
+      "256": 1200,
+      "512": 1250
+    }
+  },
+  {
+    "id": "iphone-17",
+    "name": "iPhone 17",
+    "family": "iPhone 17",
+    "type": "Base",
+    "isActivationLockTier": false,
+    "basePrice": {
+      "128": 1050,
+      "256": 1100,
+      "512": 1150
+    }
+  },
+  {
     "id": "iphone-16-pro-max",
     "name": "iPhone 16 Pro Max",
     "family": "iPhone 16",
