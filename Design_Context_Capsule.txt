@@ -1,0 +1,217 @@
+DESIGN CONTEXT CAPSULE (PLAIN TEXT, AI-READY)
+
+0) DESIGN PRINCIPLES
+- Trust first, then speed
+- Conversion-focused; quote module always accessible
+- Clarity over cleverness; short, plain language
+- Low cognitive load; generous spacing
+- Accessibility baseline: WCAG AA; visible high-contrast toggle
+- Mobile-first
+
+1) BRAND VOICE AND MESSAGING
+- Tone: Friendly, professional; reassuring, transparent; never pushy
+- Core messages:
+  "Instant quote. Friendly pickup or easy drop-off in Penrith."
+  "Subject to inspection. Quote valid for 7 days."
+  "Cash on pickup, or bank transfer/PayID if you prefer."
+- Do: clear, calm statements (e.g., "We’ll email your quote to confirm.")
+- Don’t: hype, slang, pressure
+
+2) VISUAL IDENTITY SYSTEM
+2.1 Color palette (light, trustworthy)
+- Primary (Action Blue): #2563EB
+- Success (Positive): #10B981
+- Info/Accent (Trust): #4F46E5
+- Surface (Page bg): #F8FAFC
+- Card (Containers): #FFFFFF
+- Text (Headings): #0F172A
+- Text (Body): #334155
+- Borders/Lines: #E2E8F0
+- Danger (Errors): #DC2626
+- Usage rules: Buttons use Primary Blue with white text; links Primary Blue with underline on hover/focus; use Success for confirmations/badges; maintain AA contrast
+
+2.2 Typography
+- Family: Inter or clean system sans
+- Sizes (mobile / desktop):
+  H1 hero: 28–32 / 40–48
+  H2 section: 22 / 28–32
+  H3 card titles: 18 / 20–22
+  Body: 16 / 16–18
+  Small/meta: 14
+- Line-height: 1.3–1.5
+- Weights: 600 headlines; 500 buttons; 400 body
+- Numbers: Tabular lining for prices
+
+2.3 Spacing and layout
+- Spacing scale (px): 4, 8, 12, 16, 24, 32, 40, 48, 64
+- Corner radius: ~12–16
+- Shadows: soft, low elevation
+- Grid: max width ~1100–1200; 12-col desktop; 1-col mobile
+
+2.4 Iconography and imagery
+- Icons: outline, rounded joins; 20–24px
+- Imagery: device renders, neutral backgrounds, consistent lighting
+- Alt text: literal and concise (e.g., "iPhone 13 cracked screen")
+
+3) PAGE STRUCTURE AND CONTENT HIERARCHY
+3.1 Header (persistent)
+- Left: wordmark "SellPhones.sydney"
+- Right: WhatsApp (+61 415 957 027); high-contrast toggle; anchors: How it works; Reviews; FAQ
+- Sticky on scroll; shrinks height; toggle persists
+
+3.2 Hero (above the fold)
+- H1: "Cash For Phones Today"
+- Subhead: "Instant quote. Friendly pickup or easy drop-off in Penrith."
+- Primary CTA: "Get my instant quote"
+- Trust badges row: "Fast payout · Licensed recycler · Secure & friendly · Cash or Bank Transfer/PayID"
+- Disclosure: "Subject to inspection. Quote valid for 7 days."
+- Desktop: hero left = How it works + top reviews; right = Quote module
+- Mobile: Quote module appears first
+
+3.3 Quote module (dominant)
+- Inputs: Model (typeahead), Storage (dropdown), Damage checklist (grouped), Accessories (box/charger toggles), Sell method (Pickup/Drop-off), Address/Place (if Pickup)
+- Outputs: Instant Quote; Pickup distance/time/fee; Quote validity date
+- CTA: "Continue" (opens lead form inline)
+- Helper: "Pickup is free if travel cost is under $20; otherwise capped at $30–$50."
+- Edge banners: outside coverage; very new/very old/locked badges
+
+3.4 Lead form (inline)
+- Fields: Name; Phone; Email; Location (auto-filled); Notes; Photos (0–3)
+- CTA: "Email my quote to verify"
+- Post-submit card: summary + "Check your email to confirm."
+
+3.5 How it works (3 steps)
+- 1 Get your instant quote
+- 2 Verify & schedule pickup or drop-off (calendar)
+- 3 We inspect and pay on the spot
+
+3.6 Reviews (social proof)
+- Show 6 static reviews: stars; 1–2 sentence quote; name + suburb
+- No auto-carousel; optional "Show more" drawer
+
+3.7 Coverage map (informational)
+- Sydney map with soft service-area highlight
+- Microcopy clarifies dynamic coverage by value and distance
+- Button: "Request manual review" (short form; allow photos)
+
+3.8 FAQ (expanders)
+- Topics: pickup timing; what to bring; payment timing; accessories policy (−$20 if box or charger missing); data wipe; quote validity; inspection note; safety rules (no private residences after 9pm)
+
+3.9 Footer
+- Business details: SellPhones.sydney; 0415 957 027; 1 Brushwood Street, Claremont Meadows NSW; Contact 24/7
+- Links: WhatsApp; Email; FAQ; Privacy; Terms
+- Schema consistency: mirrors LocalBusiness
+
+4) COMPONENT SPECIFICATIONS
+4.1 Quote inputs
+- Model typeahead: placeholder "Search iPhone model (e.g., iPhone 13 Pro)"; show popular families when empty
+- Storage: disabled until model set; ascending values (64→1TB)
+- Damage checklist: grouped sets (Screen & Face ID; Back & Cameras; Buttons & Ports; Sound & Mics; Battery; Other issues); show live count ("3 issues selected")
+- Accessories: toggles (Box; Charger); helper text shown
+
+4.2 Quote outputs
+- Quote figure: large and bold; whole AUD dollars (no cents)
+- Validity badge: "Valid until DD MMM, 11:59pm"
+- Pickup panel: "12.4 km · ~22 min"; Fee result (Free / $30 / $XX / $50) + helper; eligibility hint if not covered
+
+4.3 Lead form
+- Inline hints on blur; friendly tone
+- Photos: drag-and-drop zone; "Upload up to 3 photos"
+- Consent microtext: "By continuing you agree to our Terms & Privacy. Subject to inspection."
+- Submit button: disabled until required fields valid
+
+4.4 Feedback
+- Toasts: brief; bottom-center on mobile / top-right on desktop
+- Banners: success/info/warn/danger with icon + one sentence
+- Inline errors: under field; red + icon; do not rely on color alone
+
+4.5 Calendar (after verification)
+- Show next 7–14 days; only 12:00–20:00 slots
+- "Same-day available" badge when applicable
+- Slot tiles: readable; past/blocked disabled; selection shows confirmation card
+
+4.6 Modals and drawers
+- Manual review: short form; friendly copy; easy close
+- Photo lightbox: full-screen; swipeable on mobile
+
+4.7 Offline banner
+- Copy: "You’re offline. We’ll save changes and retry when you’re back."
+- Behavior: blocks destructive actions; auto-hide when online
+
+5) RESPONSIVE BEHAVIOR
+5.1 Breakpoints
+- Mobile <480px: single column; quote first
+- Tablet 480–768px: two stacked zones; quote top
+- Desktop >768px: two columns; max width ~1200px
+5.2 Reflow rules
+- Buttons full-width on mobile; auto width on desktop
+- Sticky mobile CTA appears after scrolling beyond hero: "Get my instant quote"
+
+6) ACCESSIBILITY
+- Goal: WCAG AA
+- High-contrast toggle in header; persists
+- Visible focus states; logical tab order
+- Target sizes ≥44×44px
+- Every input has visible label; placeholders never substitute labels
+- Errors: text + icon; programmatically associated with fields
+- Reduced motion respected; disable nonessential animations
+- Alt text present and descriptive
+
+7) MOTION AND MICRO-INTERACTIONS
+- Global motion: subtle; 150–250ms durations
+- Section transitions: simple fades; no parallax
+- Buttons: loading spinner + "Please wait…"; minimal success pulse
+- Quote change: quick count-up (~200ms) or cross-fade if reduced motion
+- Checklist ticks: small fade/scale; no bounce
+
+8) COPY DECK (KEY STRINGS)
+- Hero CTA: "Get my instant quote"
+- Model placeholder: "Search iPhone model (e.g., iPhone 13 Pro)"
+- Storage label: "Storage"
+- Damage groups: "Screen & Face ID"; "Back & Cameras"; "Buttons & Ports"; "Sound & Mics"; "Battery"; "Other issues"
+- Accessories helper: "−$20 if box or charger missing"
+- Pickup helper: "Pickup is free if travel cost is under $20; otherwise capped at $30–$50."
+- Coverage fail: "This pickup is outside our current coverage for the value of this device. Choose drop-off or request manual review."
+- Manual review CTA: "Request manual review"
+- Form CTA: "Email my quote to verify"
+- Post-submit: "We’ve sent your quote to your email. Please confirm to continue."
+- Errors/empty:
+  "Choose a model and storage size to continue."
+  "We don’t have a price for that yet. Send photos and we’ll respond quickly."
+  "We couldn’t find that location. Try a nearby landmark."
+  "That photo didn’t upload. Try again or use a smaller file."
+  "You’re offline — we’ll retry shortly."
+
+9) EMAIL DESIGN (STRUCTURE)
+Verification Email
+- Subject: "Confirm your iPhone quote — valid for 7 days"
+- Preheader: "Tap to confirm and choose a time."
+- Layout: single column; large tap targets; 16px+ text
+- Blocks: quote summary; pickup estimate (if any); "Subject to inspection" badge; Confirm button; footer with WhatsApp (+61 415 957 027)
+Paid Receipt Email
+- Subject: "Receipt for your iPhone sale — thank you!"
+- Preheader: "Your payment is complete."
+- Content: device; amount; date/time; method; meeting location; PDF attachment; footer contact
+
+10) TRUST, SEO, AND LEGAL PRESENTATION
+- Trust indicators: reviews (6), average + count; badges in hero and near calculator
+- SEO meta:
+  Title: "Sell iPhone in Sydney — Cash For Phones Today (Penrith Pickup & Drop-off)"
+  Description: "Instant quotes for iPhones in Sydney. Friendly pickup or easy drop-off in Penrith. Cash on pickup or bank transfer/PayID. Quote valid for 7 days. Subject to inspection."
+  Open Graph: device render on light background with wordmark/tagline; minimal text
+- LocalBusiness display:
+  Name: SellPhones.sydney
+  Phone: 0415 957 027
+  Address: 1 Brushwood Street, Claremont Meadows NSW
+  Hours: Contact 24/7 (bookable window 12:00–20:00 noted in body)
+
+11) QA CHECKLIST (DESIGN ACCEPTANCE)
+- Quote module clearly visible in hero (desktop) and first on mobile
+- All text and UI states meet AA contrast
+- Keyboard navigation complete; visible focus; logical order
+- Reduced-motion respected; no blocking animations
+- Inline field errors present and clear
+- Empty/loading/error/success states for major components
+- Reviews static (no auto-advance)
+- "Subject to inspection" appears next to quote and in emails
+- Footer shows business name, phone, address, Terms/Privacy links
