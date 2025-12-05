@@ -35,6 +35,8 @@ export default function QuoteCalculator() {
 
   const [modelSearch, setModelSearch] = useState('');
   const [showModelDropdown, setShowModelDropdown] = useState(false);
+  const [storageSearch, setStorageSearch] = useState('');
+  const [showStorageDropdown, setShowStorageDropdown] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -44,11 +46,19 @@ export default function QuoteCalculator() {
     model.name.toLowerCase().includes(modelSearch.toLowerCase())
   );
 
+  // Filter storage based on search
+  const filteredStorageOptions = selectedModel
+    ? selectedModel.storageOptions.filter((storage: string) =>
+        storage.toLowerCase().includes(storageSearch.toLowerCase())
+      )
+    : [];
+
   const handleModelSelect = (model: any) => {
     setSelectedModel(model);
     setModelSearch(model.name);
     setShowModelDropdown(false);
     setSelectedStorage(''); // Reset storage when model changes
+    setStorageSearch(''); // Reset storage search
     analytics.trackModelSelection(model.name);
   };
 
@@ -154,7 +164,7 @@ export default function QuoteCalculator() {
                 onFocus={() => setShowModelDropdown(true)}
               />
 
-              {showModelDropdown && modelSearch && (
+              {showModelDropdown && (
                 <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 max-h-60 overflow-y-auto shadow-lg">
                   {filteredModels.length > 0 ? (
                     filteredModels.map((model: any) => (
@@ -182,24 +192,45 @@ export default function QuoteCalculator() {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Storage *
               </label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                value={selectedStorage}
-                onChange={(e) => {
-                  const storage = e.target.value;
-                  setSelectedStorage(storage);
-                  if (storage && selectedModel) {
-                    analytics.trackStorageSelection(storage, selectedModel.name);
-                  }
-                }}
-              >
-                <option value="">Select storage size</option>
-                {selectedModel.storageOptions.map(storage => (
-                  <option key={storage} value={storage}>
-                    {storage}GB
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <input
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Select storage size"
+                  value={storageSearch}
+                  onChange={(e) => {
+                    setStorageSearch(e.target.value);
+                    setShowStorageDropdown(true);
+                  }}
+                  onFocus={() => setShowStorageDropdown(true)}
+                />
+
+                {showStorageDropdown && (
+                  <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 max-h-60 overflow-y-auto shadow-lg">
+                    {filteredStorageOptions.length > 0 ? (
+                      filteredStorageOptions.map(storage => (
+                        <button
+                          key={storage}
+                          type="button"
+                          className="w-full text-left px-3 py-2 hover:bg-gray-50 text-sm"
+                          onClick={() => {
+                            setSelectedStorage(storage);
+                            setStorageSearch(storage + 'GB');
+                            setShowStorageDropdown(false);
+                            if (selectedModel) {
+                              analytics.trackStorageSelection(storage, selectedModel.name);
+                            }
+                          }}
+                        >
+                          {storage}GB
+                        </button>
+                      ))
+                    ) : (
+                      <div className="px-3 py-2 text-sm text-gray-500">No storage options found</div>
+                    )}
+                  </div>
+                )}
+              </div>
               {errors.storage && <p className="mt-1 text-xs text-red-600">{errors.storage}</p>}
             </div>
           )}
