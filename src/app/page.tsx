@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-6">
               <a href="tel:+61415957027" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
-                📱 +61 415 957 027
+                +61 415 957 027
               </a>
               <nav className="hidden md:flex space-x-6">
                 <a href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900">How it works</a>
@@ -179,8 +179,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-semibold text-gray-900 mb-4">SellPhones.sydney</h3>
-              <p className="text-gray-600 text-sm mb-2">📞 0415 957 027</p>
-              <p className="text-gray-600 text-sm mb-2">📍 Penrith Area, NSW</p>
+              <p className="text-gray-600 text-sm mb-2">Phone: 0415 957 027</p>
+              <p className="text-gray-600 text-sm mb-2">Location: Penrith Area, NSW</p>
               <p className="text-gray-600 text-sm">Contact 24/7</p>
             </div>
             <div>
