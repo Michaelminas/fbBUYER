@@ -53,7 +53,7 @@ export default function Home() {
                 Cash For Phones Today
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                Instant quote. Friendly pickup or easy drop-off in Penrith.
+                Get a quote within 24 hours. Friendly service across Sydney.
               </p>
               
               {/* Trust Badges */}
@@ -77,7 +77,7 @@ export default function Home() {
               </div>
               
               <p className="text-sm text-gray-500">
-                Subject to inspection. Quote valid for 7 days.
+                We'll call you back with a competitive quote.
               </p>
             </div>
 
@@ -90,8 +90,8 @@ export default function Home() {
                     1
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-1">Get your instant quote</h3>
-                    <p className="text-gray-600 text-sm">Select your iPhone model and condition for an immediate price estimate.</p>
+                    <h3 className="font-medium text-gray-900 mb-1">Tell us about your iPhone</h3>
+                    <p className="text-gray-600 text-sm">Select your iPhone model and let us know about any damage or issues.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -99,8 +99,8 @@ export default function Home() {
                     2
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-1">Verify & schedule pickup or drop-off</h3>
-                    <p className="text-gray-600 text-sm">Confirm your details and choose a convenient time via our calendar.</p>
+                    <h3 className="font-medium text-gray-900 mb-1">We'll call you with a quote</h3>
+                    <p className="text-gray-600 text-sm">Our team will contact you within 24 hours with a competitive offer.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -108,8 +108,8 @@ export default function Home() {
                     3
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-1">We inspect and pay on the spot</h3>
-                    <p className="text-gray-600 text-sm">Quick inspection and immediate payment via cash or bank transfer.</p>
+                    <h3 className="font-medium text-gray-900 mb-1">Get paid fast</h3>
+                    <p className="text-gray-600 text-sm">Accept the offer and receive payment via cash or bank transfer.</p>
                   </div>
                 </div>
               </div>
@@ -124,14 +124,14 @@ export default function Home() {
                     <div className="text-yellow-400">★★★★★</div>
                     <span className="ml-2 text-sm text-gray-600">Sarah M.</span>
                   </div>
-                  <p className="text-sm text-gray-700">"Quick and easy process. Got my quote and cash same day!"</p>
+                  <p className="text-sm text-gray-700">"Called me back within hours with a great offer. Very professional!"</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-gray-200">
                   <div className="flex items-center mb-2">
                     <div className="text-yellow-400">★★★★★</div>
                     <span className="ml-2 text-sm text-gray-600">David L.</span>
                   </div>
-                  <p className="text-sm text-gray-700">"Fair prices and professional service. Highly recommend!"</p>
+                  <p className="text-sm text-gray-700">"Best price I got for my iPhone. Quick response and easy process!"</p>
                 </div>
               </div>
             </div>
@@ -141,24 +141,24 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 <details className="bg-white p-4 rounded-lg border border-gray-200">
-                  <summary className="font-medium text-gray-900 cursor-pointer">How quickly do you pick up?</summary>
-                  <p className="mt-2 text-sm text-gray-600">Same-day pickup available within 20km if requested before 3:00pm. All other pickups within 24-48 hours during our operating hours (12:00-20:00).</p>
+                  <summary className="font-medium text-gray-900 cursor-pointer">How quickly will I get a quote?</summary>
+                  <p className="mt-2 text-sm text-gray-600">We aim to call you back within 24 hours with a competitive quote for your iPhone.</p>
                 </details>
                 <details className="bg-white p-4 rounded-lg border border-gray-200">
-                  <summary className="font-medium text-gray-900 cursor-pointer">What should I bring?</summary>
-                  <p className="mt-2 text-sm text-gray-600">Just your iPhone and any accessories (box, charger) you mentioned in the quote. We'll handle everything else including data wipe guidance.</p>
+                  <summary className="font-medium text-gray-900 cursor-pointer">What information do I need to provide?</summary>
+                  <p className="mt-2 text-sm text-gray-600">Just tell us your iPhone model, storage size, and any damage or issues. We'll also need your contact details so we can call you back.</p>
                 </details>
                 <details className="bg-white p-4 rounded-lg border border-gray-200">
-                  <summary className="font-medium text-gray-900 cursor-pointer">When do I get paid?</summary>
-                  <p className="mt-2 text-sm text-gray-600">Payment is made immediately after inspection via cash, bank transfer, or PayID - your choice!</p>
+                  <summary className="font-medium text-gray-900 cursor-pointer">Do you offer pickup or drop-off?</summary>
+                  <p className="mt-2 text-sm text-gray-600">We'll discuss pickup or drop-off options when we call you with the quote. Service available across Sydney.</p>
                 </details>
                 <details className="bg-white p-4 rounded-lg border border-gray-200">
-                  <summary className="font-medium text-gray-900 cursor-pointer">What if my quote changes?</summary>
-                  <p className="mt-2 text-sm text-gray-600">Your verified quote is honored for 7 days. Price may only change if device condition differs from what was declared during inspection.</p>
+                  <summary className="font-medium text-gray-900 cursor-pointer">What payment methods do you accept?</summary>
+                  <p className="mt-2 text-sm text-gray-600">We offer cash, bank transfer, or PayID - whatever works best for you!</p>
                 </details>
                 <details className="bg-white p-4 rounded-lg border border-gray-200">
-                  <summary className="font-medium text-gray-900 cursor-pointer">Is it safe to meet privately?</summary>
-                  <p className="mt-2 text-sm text-gray-600">For safety, we don't visit private residences after 9pm. We recommend meeting at public places like shopping centers or cafés for evening pickups.</p>
+                  <summary className="font-medium text-gray-900 cursor-pointer">Is my information secure?</summary>
+                  <p className="mt-2 text-sm text-gray-600">Yes, we take your privacy seriously. Your contact information is only used to provide you with a quote and is kept completely confidential.</p>
                 </details>
               </div>
             </div>
