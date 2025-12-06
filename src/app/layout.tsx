@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   keywords: [
     'sell iPhone Sydney',
     'cash for phones',
-    'iPhone buyer Sydney', 
+    'iPhone buyer Sydney',
     'phone pickup Sydney',
     'instant iPhone quote',
     'Penrith phone buyer',
@@ -34,6 +34,13 @@ export const metadata: Metadata = {
   ],
   creator: BUSINESS_INFO.name,
   publisher: BUSINESS_INFO.name,
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: '/apple-icon.png',
+  },
   robots: {
     index: true,
     follow: true,
