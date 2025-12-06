@@ -154,7 +154,7 @@ export default function QuoteCalculator() {
             <div className="relative">
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 cursor-pointer"
                 placeholder="Search iPhone model (e.g., iPhone 13 Pro)"
                 value={modelSearch}
                 onChange={(e) => {
@@ -162,6 +162,12 @@ export default function QuoteCalculator() {
                   setShowModelDropdown(true);
                 }}
                 onFocus={() => setShowModelDropdown(true)}
+                onClick={() => {
+                  if (selectedModel) {
+                    setModelSearch('');
+                  }
+                  setShowModelDropdown(true);
+                }}
               />
 
               {showModelDropdown && (
@@ -195,7 +201,7 @@ export default function QuoteCalculator() {
               <div className="relative">
                 <input
                   type="text"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 cursor-pointer"
                   placeholder="Select storage size"
                   value={storageSearch}
                   onChange={(e) => {
@@ -203,6 +209,12 @@ export default function QuoteCalculator() {
                     setShowStorageDropdown(true);
                   }}
                   onFocus={() => setShowStorageDropdown(true)}
+                  onClick={() => {
+                    if (selectedStorage) {
+                      setStorageSearch('');
+                    }
+                    setShowStorageDropdown(true);
+                  }}
                 />
 
                 {showStorageDropdown && (
