@@ -27,7 +27,7 @@ export interface BusinessInfo {
 
 export const BUSINESS_INFO: BusinessInfo = {
   name: "Cash For Phones Today - Sydney",
-  description: "Sydney's trusted iPhone buyer. Get instant quotes, free pickup, and cash on the spot for your iPhone. 7-day quote validity, same-day service available.",
+  description: "Sydney's trusted iPhone buyer. Get a competitive quote within 24 hours. We buy all iPhone models across Sydney. Fast, secure, and professional service.",
   url: "https://sellphones.sydney",
   logo: "https://sellphones.sydney/logo.png",
   telephone: "+61415957027",
@@ -102,7 +102,7 @@ export function generateLocalBusinessSchema(business: BusinessInfo = BUSINESS_IN
           "itemOffered": {
             "@type": "Service",
             "name": "iPhone Buying Service",
-            "description": "We buy your iPhone for cash with instant quotes and free pickup"
+            "description": "We buy your iPhone for cash. Get a quote within 24 hours. All models accepted across Sydney."
           }
         }
       ]
@@ -132,42 +132,42 @@ export function generateFAQSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How much can I get for my iPhone?",
+        "name": "How quickly will I get a quote for my iPhone?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "iPhone values range from $50 to $1,500+ depending on model, storage, condition, and damage. Get an instant quote on our website for your specific device."
-        }
-      },
-      {
-        "@type": "Question", 
-        "name": "How long is my quote valid?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "All quotes are valid for 7 days from creation. This gives you time to consider the offer and arrange pickup or drop-off."
+          "text": "We aim to call you back within 24 hours with a competitive quote for your iPhone. Simply provide your model, storage, and condition details."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you offer pickup service?",
+        "name": "What information do I need to provide?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! We offer free pickup within 20km of Penrith. For longer distances, pickup fees range from $30-$50 depending on location."
+          "text": "Just tell us your iPhone model (iPhone 11 to iPhone 17), storage size, and any damage or issues. We'll also need your contact details so we can call you back with a quote."
         }
       },
       {
         "@type": "Question",
-        "name": "What areas do you service?",
+        "name": "Do you buy all iPhone models?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We service all of Sydney including Penrith, Blacktown, Parramatta, Liverpool, Campbelltown, Blue Mountains, and Camden areas."
+          "text": "Yes! We buy all iPhone models from iPhone X to the latest iPhone 17 series. All storage sizes and conditions accepted, including damaged devices."
         }
       },
       {
         "@type": "Question",
-        "name": "When do I get paid?",
+        "name": "What areas do you service in Sydney?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Payment is made immediately upon inspection and acceptance of your device. We pay cash on the spot or via instant bank transfer."
+          "text": "We service all of Sydney including Penrith, Blacktown, Parramatta, Liverpool, Campbelltown, Blue Mountains, Camden, and surrounding areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer cash payment, bank transfer, or PayID - whatever works best for you. Payment is made after we inspect and accept your device."
         }
       }
     ]
@@ -315,6 +315,10 @@ export const SEO_KEYWORDS = {
     'Camden iPhone buyer'
   ],
   models: [
+    'sell iPhone 17',
+    'sell iPhone 17 Pro Max',
+    'sell iPhone 17 Air',
+    'sell iPhone 16',
     'sell iPhone 15',
     'sell iPhone 14',
     'sell iPhone 13',
