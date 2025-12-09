@@ -166,9 +166,6 @@ export async function POST(request: NextRequest) {
 
             <!-- Header -->
             <div style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); padding: 30px 20px; border-radius: 8px 8px 0 0; text-align: center;">
-              <div style="background-color: #ffffff; width: 60px; height: 60px; margin: 0 auto 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px;">
-                ✅
-              </div>
               <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;">
                 Request Received!
               </h1>
@@ -193,7 +190,7 @@ export async function POST(request: NextRequest) {
               <!-- Device Summary -->
               <div style="background-color: #f9fafb; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
                 <h2 style="color: #111827; margin: 0 0 15px 0; font-size: 16px; text-align: center;">
-                  📱 Your Submission Summary
+                  Your Submission Summary
                 </h2>
                 <table style="width: 100%; border-collapse: collapse;">
                   <tr style="border-bottom: 1px solid #e5e7eb;">
@@ -206,10 +203,10 @@ export async function POST(request: NextRequest) {
                   </tr>
                   <tr>
                     <td style="padding: 12px 0; color: #6b7280; font-weight: 500;">Condition:</td>
-                    <td style="padding: 12px 0; text-align: right;">
+                    <td style="padding: 12px 0; text-align: right; color: #111827; font-weight: 600;">
                       ${damages.length > 0
-                        ? `<span style="color: #dc2626; font-size: 13px;">${damagesList}</span>`
-                        : `<span style="color: #16a34a; font-weight: 600;">Good</span>`
+                        ? `<span style="color: #dc2626;">${damagesList}</span>`
+                        : `<span style="color: #16a34a;">Good condition</span>`
                       }
                     </td>
                   </tr>
@@ -219,7 +216,7 @@ export async function POST(request: NextRequest) {
               <!-- What Happens Next -->
               <div style="background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 20px; margin-bottom: 25px; border-radius: 4px;">
                 <h3 style="color: #1e40af; margin: 0 0 15px 0; font-size: 16px;">
-                  📞 What Happens Next?
+                  What Happens Next?
                 </h3>
                 <ol style="margin: 0; padding-left: 20px; color: #374151; line-height: 1.8;">
                   <li style="margin-bottom: 8px;">Our team reviews your device details</li>
@@ -235,7 +232,7 @@ export async function POST(request: NextRequest) {
                   Questions? We're here to help!
                 </p>
                 <a href="tel:+61415957027" style="display: inline-block; background-color: #2563eb; color: #ffffff; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; margin: 5px;">
-                  📞 Call Us: 0415 957 027
+                  Call Us: 0415 957 027
                 </a>
               </div>
 
